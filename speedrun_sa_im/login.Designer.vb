@@ -30,7 +30,7 @@ Partial Class login
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
         Name = "login"
-        Text = "Form1"
+        Text = "LoginForm"
         ResumeLayout(False)
     End Sub
 
