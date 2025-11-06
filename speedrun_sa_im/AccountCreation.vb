@@ -1,24 +1,9 @@
-﻿Public Class AccountCreation
-    Private Sub AccountCreation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtID.Text = GenerateStudentID()
-        suffixC.Items.Clear()
-        suffixC.Items.AddRange(New Object() {
-            "",
-            "JR",
-            "SR",
-            "II",
-            "III",
-            "IV",
-            "V"
-        })
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports MySql.Data.MySqlClient
 
-    End Sub
-    Private Function GenerateStudentID() As String
-        Dim rnd As New Random()
-        Dim digits As Integer = rnd.Next(10000000, 99999999) ' 8 digits
-        Dim letter As Char = Chr(rnd.Next(65, 91)) ' A-Z ASCII range
-        Return $"{digits}-{letter}"
-    End Function
+Public Class AccountCreation
+
+
 
     Private Sub passwdBox_TextChanged(sender As Object, e As EventArgs) Handles passwdBox.TextChanged
         Dim showChar As Char = If(showPass.Checked, ControlChars.NullChar, "*"c)
@@ -56,13 +41,72 @@
             Exit Sub
         End If
 
-        ' (For now) Show success — we will connect to database next
-        MessageBox.Show("Account Created Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim rnd As New Random()
+        Dim randomDigits As Integer = rnd.Next(1000, 9999) ' 4 random digits
+        Dim studentID As String = "2024" & randomDigits.ToString()
 
-        ' Return to Login Form
-        Dim login As New LoginForm
-        login.Show()
-        Me.Close()
+        ' === MYSQL CONNECTION ===
+        Dim conString As String = "server=localhost;user id=root;password=;database=speedrun"
+        Using con As New MySqlConnection(conString)
+            con.Open()
+
+            ' === CHECK DUPLICATE USERNAME ===
+            Dim checkCmd As New MySqlCommand("SELECT COUNT(*) FROM students WHERE username = @username", con)
+            checkCmd.Parameters.AddWithValue("@username", labelUse)
+            Dim exists As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
+
+            If exists > 0 Then
+                MessageBox.Show("Username already exists. Please choose another.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+            End If
+
+            ' === INSERT STUDENT RECORD ===
+            Dim query As String = "INSERT INTO students (student_id, username, password, last_name, first_name, middle_initials, suffix) " &
+                                  "VALUES (@studentID, @username, @password, @last, @first, @middle, @suffix)"
+
+            Using cmd As New MySqlCommand(query, con)
+                ' Make sure to pass .Text, not the control itself
+                cmd.Parameters.AddWithValue("@studentID", studentID)
+                cmd.Parameters.AddWithValue("@username", labelUse.Text.Trim())
+                cmd.Parameters.AddWithValue("@password", passwdBox.Text.Trim())
+                cmd.Parameters.AddWithValue("@last", labelLast.Text.Trim())
+                cmd.Parameters.AddWithValue("@first", labelFirst.Text.Trim())
+                cmd.Parameters.AddWithValue("@middle", If(String.IsNullOrEmpty(labelMid.Text.Trim()), DBNull.Value, labelMid.Text.Trim()))
+                cmd.Parameters.AddWithValue("@suffix", If(String.IsNullOrEmpty(suffixC.Text.Trim()), DBNull.Value, suffixC.Text.Trim()))
+
+                Dim rows As Integer = cmd.ExecuteNonQuery()
+
+                If rows > 0 Then
+                    MessageBox.Show("Account Created Successfully!" & vbCrLf &
+                        "Student ID: " & studentID, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Dim login As New LoginForm
+                    login.Show()
+                    Me.Close()
+                Else
+                    MessageBox.Show("Account creation failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End Using
+        End Using
+    End Sub
+
+    Private Sub AccountCreation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' === GENERATE STUDENT ID (Starts with 2024 + 4 random digits) ===
+        Dim rnd As New Random()
+        Dim randomDigits As Integer = rnd.Next(1000, 9999)
+        Dim studentID As String = "2024" & randomDigits.ToString()
+        txtID.Text = studentID ' display generated ID in the textbox
+
+        ' === SUFFIX OPTIONS ===
+        suffixC.Items.Clear()
+        suffixC.Items.AddRange(New Object() {
+            "",
+            "JR",
+            "SR",
+            "II",
+            "III",
+            "IV",
+            "V"
+        })
     End Sub
 
     Private Sub labelLast_TextChanged(sender As Object, e As EventArgs) Handles labelLast.TextChanged

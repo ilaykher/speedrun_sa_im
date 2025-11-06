@@ -90,7 +90,7 @@ Partial Class AccountCreation
         HeaderPanel.Location = New Point(0, 0)
         HeaderPanel.Name = "HeaderPanel"
         HeaderPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges22
-        HeaderPanel.Size = New Size(723, 100)
+        HeaderPanel.Size = New Size(712, 100)
         HeaderPanel.TabIndex = 1
         ' 
         ' Label1
@@ -466,7 +466,7 @@ Partial Class AccountCreation
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.WhiteSmoke
-        ClientSize = New Size(723, 544)
+        ClientSize = New Size(712, 544)
         Controls.Add(CardPanel)
         Controls.Add(HeaderPanel)
         Controls.Add(Label2)

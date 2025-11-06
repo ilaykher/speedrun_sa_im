@@ -1,6 +1,9 @@
 ﻿Imports Guna.UI2.WinForms
+Imports MySql.Data.MySqlClient
 
 Public Class LoginForm
+    Dim connectionString As String = "server=localhost;userid=root;password=;database=speedrun"
+
     Private Sub showPass_CheckedChanged(sender As Object, e As EventArgs) Handles showPass.CheckedChanged
         pwBox.PasswordChar = If(showPass.Checked, ControlChars.NullChar, "*"c)
     End Sub
@@ -28,20 +31,53 @@ Public Class LoginForm
             Exit Sub
         End If
 
-        ' (TEMPORARY) Hardcoded check – We will replace this with Database soon
-        ' ────────────────────────────────────────────────────────────────────
-        Dim demoUsername As String = "admin"
-        Dim demoPassword As String = "admin1234"
+        ' Actual Database Login
+        Using conn As New MySqlConnection(connectionString)
+            Try
+                conn.Open()
+                Dim query As String = "SELECT user_id, username, role FROM users WHERE username=@username AND password=@password LIMIT 1"
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@username", txtUsername.Text.Trim())
+                    cmd.Parameters.AddWithValue("@password", pwBox.Text.Trim())
 
-        If txtUsername.Text = demoUsername AndAlso pwBox.Text = demoPassword Then
-            MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            ' TODO: Open your dashboard form here
-            ' New DashboardForm.Show()
-            ' Me.Hide()
-        Else
-            MessageBox.Show("No user found with those credentials.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            Dim role As String = reader("role").ToString()
 
+                            Select Case role.ToLower()
+                                Case "admin"
+                                    MessageBox.Show("Welcome Admin!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    Dim adminForm As New DashboardForm
+                                    adminForm.Show()
+                                    Me.Hide()
+
+                                Case "faculty"
+                                    MessageBox.Show("Welcome Faculty!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    Dim facultyForm As New FacultyPortal
+                                    facultyForm.Show()
+                                    Me.Hide()
+
+                                Case "student"
+                                    MessageBox.Show("Welcome Student!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    Dim studentForm As New StudentAttendance
+                                    studentForm.Show()
+                                    Me.Hide()
+
+                                Case Else
+                                    MessageBox.Show("Unknown role assigned.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            End Select
+                        Else
+                            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    End Using
+                End Using
+
+            Catch ex As Exception
+                MessageBox.Show("Database Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                conn.Close()
+            End Try
+        End Using
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -52,5 +88,17 @@ Public Class LoginForm
         Dim regForm As New AccountCreation()
         regForm.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
+
+    End Sub
+
+    Private Sub pwBox_TextChanged(sender As Object, e As EventArgs) Handles pwBox.TextChanged
+
+    End Sub
+
+    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

@@ -70,16 +70,19 @@ Public Class FacultyPortal
     ' === BUTTONS (READY TO CONNECT) ===
     Private Sub btnAttendance_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click
         pnlmain.Controls.Clear()
-        ' To do: connect attendance page later
+        Dim attendance As New AttendanceForm
+        attendance.Show()
     End Sub
 
     Private Sub btnStudent_Click(sender As Object, e As EventArgs) Handles btnStudent.Click
         pnlmain.Controls.Clear()
-        ' To do: connect student page later
+        Dim studentMng As New StudentManagementForm
+        studentMng.Show()
     End Sub
 
     Private Sub btncourse_Click(sender As Object, e As EventArgs) Handles btncourse.Click
         pnlmain.Controls.Clear()
+
         ' To do: connect course page later
     End Sub
 
