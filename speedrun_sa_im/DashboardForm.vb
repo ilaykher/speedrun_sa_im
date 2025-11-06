@@ -10,15 +10,11 @@
 Imports Guna.UI2.WinForms
 
 Public Class DashboardForm
-    Private Sub btnStudents_Click(sender As Object, e As EventArgs) Handles btnStudents.Click
-
-    End Sub
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Try
             Me.WindowState = FormWindowState.Minimized
         Catch ex As Exception
-            Logger.LogError("Error minimizing window", ex)
         End Try
     End Sub
 
@@ -32,7 +28,6 @@ Public Class DashboardForm
                 btnMaximize.Text = "□"
             End If
         Catch ex As Exception
-            Logger.LogError("Error maximizing window", ex)
         End Try
     End Sub
 
@@ -59,5 +54,9 @@ Public Class DashboardForm
             ' Finally hide this main form
             Me.Close()
         End If
+    End Sub
+
+    Private Sub btnStudents_Click(sender As Object, e As EventArgs) Handles btnStudents.Click
+
     End Sub
 End Class

@@ -33,14 +33,14 @@ Partial Class StudentAttendance
         Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
@@ -49,24 +49,24 @@ Partial Class StudentAttendance
         cmbsubdesc = New Guna.UI2.WinForms.Guna2ComboBox()
         pnlHeader = New Guna.UI2.WinForms.Guna2Panel()
         Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        lblname = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        btnlogout = New Guna.UI2.WinForms.Guna2Button()
-        lblYearSection = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        lblstudent = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         btnstudentportal = New Guna.UI2.WinForms.Guna2Button()
+        btnlogout = New Guna.UI2.WinForms.Guna2Button()
+        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        lblname = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        lblstudent = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        lblYearSection = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         lblAttendance = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(components)
-        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Guna2ShadowPanel1.SuspendLayout()
         Guna2Panel2.SuspendLayout()
         pnlHeader.SuspendLayout()
         Guna2Panel3.SuspendLayout()
-        Guna2Panel1.SuspendLayout()
         Guna2Panel4.SuspendLayout()
+        Guna2Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Guna2BorderlessForm1
@@ -77,16 +77,16 @@ Partial Class StudentAttendance
         ' 
         ' Guna2ShadowPanel1
         ' 
+        Guna2ShadowPanel1.Anchor = AnchorStyles.None
         Guna2ShadowPanel1.BackColor = Color.Transparent
         Guna2ShadowPanel1.Controls.Add(Guna2Panel2)
         Guna2ShadowPanel1.Controls.Add(pnlHeader)
-        Guna2ShadowPanel1.Dock = DockStyle.Fill
         Guna2ShadowPanel1.FillColor = Color.White
         Guna2ShadowPanel1.Location = New Point(0, 0)
         Guna2ShadowPanel1.Name = "Guna2ShadowPanel1"
         Guna2ShadowPanel1.Radius = 5
         Guna2ShadowPanel1.ShadowColor = Color.Black
-        Guna2ShadowPanel1.Size = New Size(800, 450)
+        Guna2ShadowPanel1.Size = New Size(798, 450)
         Guna2ShadowPanel1.TabIndex = 0
         ' 
         ' Guna2Panel2
@@ -95,11 +95,10 @@ Partial Class StudentAttendance
         Guna2Panel2.Controls.Add(Guna2HtmlLabel4)
         Guna2Panel2.Controls.Add(cmbsubdesc)
         Guna2Panel2.CustomizableEdges = CustomizableEdges5
-        Guna2Panel2.Dock = DockStyle.Fill
-        Guna2Panel2.Location = New Point(0, 167)
+        Guna2Panel2.Location = New Point(-1, 167)
         Guna2Panel2.Name = "Guna2Panel2"
         Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        Guna2Panel2.Size = New Size(800, 283)
+        Guna2Panel2.Size = New Size(796, 283)
         Guna2Panel2.TabIndex = 1
         ' 
         ' btnpresent
@@ -158,7 +157,7 @@ Partial Class StudentAttendance
         pnlHeader.Location = New Point(0, 0)
         pnlHeader.Name = "pnlHeader"
         pnlHeader.ShadowDecoration.CustomizableEdges = CustomizableEdges18
-        pnlHeader.Size = New Size(800, 167)
+        pnlHeader.Size = New Size(798, 167)
         pnlHeader.TabIndex = 0
         ' 
         ' Guna2Panel3
@@ -171,87 +170,20 @@ Partial Class StudentAttendance
         Guna2Panel3.Location = New Point(0, 67)
         Guna2Panel3.Name = "Guna2Panel3"
         Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges16
-        Guna2Panel3.Size = New Size(800, 100)
+        Guna2Panel3.Size = New Size(798, 100)
         Guna2Panel3.TabIndex = 5
         ' 
-        ' Guna2HtmlLabel3
+        ' Guna2Panel4
         ' 
-        Guna2HtmlLabel3.BackColor = Color.Transparent
-        Guna2HtmlLabel3.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
-        Guna2HtmlLabel3.Location = New Point(6, 62)
-        Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Guna2HtmlLabel3.Size = New Size(113, 23)
-        Guna2HtmlLabel3.TabIndex = 7
-        Guna2HtmlLabel3.Text = "Year & Section:"
-        ' 
-        ' Guna2HtmlLabel2
-        ' 
-        Guna2HtmlLabel2.BackColor = Color.Transparent
-        Guna2HtmlLabel2.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
-        Guna2HtmlLabel2.Location = New Point(6, 14)
-        Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Guna2HtmlLabel2.Size = New Size(86, 23)
-        Guna2HtmlLabel2.TabIndex = 6
-        Guna2HtmlLabel2.Text = "Student-Id:"
-        ' 
-        ' Guna2HtmlLabel1
-        ' 
-        Guna2HtmlLabel1.BackColor = Color.Transparent
-        Guna2HtmlLabel1.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
-        Guna2HtmlLabel1.Location = New Point(6, 37)
-        Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Guna2HtmlLabel1.Size = New Size(72, 23)
-        Guna2HtmlLabel1.TabIndex = 5
-        Guna2HtmlLabel1.Text = "Fullname:"
-        ' 
-        ' lblname
-        ' 
-        lblname.BackColor = Color.Transparent
-        lblname.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
-        lblname.Location = New Point(125, 37)
-        lblname.Name = "lblname"
-        lblname.Size = New Size(72, 23)
-        lblname.TabIndex = 2
-        lblname.Text = "Fullname: "
-        ' 
-        ' btnlogout
-        ' 
-        btnlogout.BorderRadius = 3
-        btnlogout.BorderStyle = Drawing2D.DashStyle.Dot
-        btnlogout.CustomizableEdges = CustomizableEdges9
-        btnlogout.DisabledState.BorderColor = Color.DarkGray
-        btnlogout.DisabledState.CustomBorderColor = Color.DarkGray
-        btnlogout.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        btnlogout.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        btnlogout.FillColor = Color.FromArgb(CByte(231), CByte(76), CByte(60))
-        btnlogout.Font = New Font("Segoe UI Variable Small", 12F, FontStyle.Bold)
-        btnlogout.ForeColor = Color.White
-        btnlogout.Location = New Point(33, 54)
-        btnlogout.Name = "btnlogout"
-        btnlogout.ShadowDecoration.CustomizableEdges = CustomizableEdges10
-        btnlogout.Size = New Size(150, 34)
-        btnlogout.TabIndex = 4
-        btnlogout.Text = "Log Out"
-        ' 
-        ' lblYearSection
-        ' 
-        lblYearSection.BackColor = Color.Transparent
-        lblYearSection.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
-        lblYearSection.Location = New Point(125, 62)
-        lblYearSection.Name = "lblYearSection"
-        lblYearSection.Size = New Size(128, 23)
-        lblYearSection.TabIndex = 3
-        lblYearSection.Text = "Year And Section"
-        ' 
-        ' lblstudent
-        ' 
-        lblstudent.BackColor = Color.Transparent
-        lblstudent.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
-        lblstudent.Location = New Point(125, 14)
-        lblstudent.Name = "lblstudent"
-        lblstudent.Size = New Size(86, 23)
-        lblstudent.TabIndex = 1
-        lblstudent.Text = "Student-Id:"
+        Guna2Panel4.Controls.Add(btnstudentportal)
+        Guna2Panel4.Controls.Add(btnlogout)
+        Guna2Panel4.CustomizableEdges = CustomizableEdges11
+        Guna2Panel4.Dock = DockStyle.Fill
+        Guna2Panel4.Location = New Point(599, 0)
+        Guna2Panel4.Name = "Guna2Panel4"
+        Guna2Panel4.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        Guna2Panel4.Size = New Size(199, 100)
+        Guna2Panel4.TabIndex = 9
         ' 
         ' btnstudentportal
         ' 
@@ -272,22 +204,24 @@ Partial Class StudentAttendance
         btnstudentportal.TabIndex = 3
         btnstudentportal.Text = "Student Portal"
         ' 
-        ' lblAttendance
+        ' btnlogout
         ' 
-        lblAttendance.BackColor = Color.Transparent
-        lblAttendance.Font = New Font("Segoe UI Variable Display", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblAttendance.ForeColor = Color.White
-        lblAttendance.Location = New Point(12, 12)
-        lblAttendance.Name = "lblAttendance"
-        lblAttendance.Size = New Size(182, 38)
-        lblAttendance.TabIndex = 0
-        lblAttendance.Text = "ATTENDANCE"
-        ' 
-        ' Guna2DragControl1
-        ' 
-        Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
-        Guna2DragControl1.TargetControl = pnlHeader
-        Guna2DragControl1.UseTransparentDrag = True
+        btnlogout.BorderRadius = 3
+        btnlogout.BorderStyle = Drawing2D.DashStyle.Dot
+        btnlogout.CustomizableEdges = CustomizableEdges9
+        btnlogout.DisabledState.BorderColor = Color.DarkGray
+        btnlogout.DisabledState.CustomBorderColor = Color.DarkGray
+        btnlogout.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        btnlogout.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        btnlogout.FillColor = Color.FromArgb(CByte(231), CByte(76), CByte(60))
+        btnlogout.Font = New Font("Segoe UI Variable Small", 12F, FontStyle.Bold)
+        btnlogout.ForeColor = Color.White
+        btnlogout.Location = New Point(33, 54)
+        btnlogout.Name = "btnlogout"
+        btnlogout.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        btnlogout.Size = New Size(150, 34)
+        btnlogout.TabIndex = 4
+        btnlogout.Text = "Log Out"
         ' 
         ' Guna2Panel1
         ' 
@@ -305,17 +239,82 @@ Partial Class StudentAttendance
         Guna2Panel1.Size = New Size(599, 100)
         Guna2Panel1.TabIndex = 8
         ' 
-        ' Guna2Panel4
+        ' lblname
         ' 
-        Guna2Panel4.Controls.Add(btnstudentportal)
-        Guna2Panel4.Controls.Add(btnlogout)
-        Guna2Panel4.CustomizableEdges = CustomizableEdges11
-        Guna2Panel4.Dock = DockStyle.Fill
-        Guna2Panel4.Location = New Point(599, 0)
-        Guna2Panel4.Name = "Guna2Panel4"
-        Guna2Panel4.ShadowDecoration.CustomizableEdges = CustomizableEdges12
-        Guna2Panel4.Size = New Size(201, 100)
-        Guna2Panel4.TabIndex = 9
+        lblname.BackColor = Color.Transparent
+        lblname.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
+        lblname.Location = New Point(125, 37)
+        lblname.Name = "lblname"
+        lblname.Size = New Size(72, 23)
+        lblname.TabIndex = 2
+        lblname.Text = "Fullname: "
+        ' 
+        ' Guna2HtmlLabel3
+        ' 
+        Guna2HtmlLabel3.BackColor = Color.Transparent
+        Guna2HtmlLabel3.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
+        Guna2HtmlLabel3.Location = New Point(6, 62)
+        Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Guna2HtmlLabel3.Size = New Size(113, 23)
+        Guna2HtmlLabel3.TabIndex = 7
+        Guna2HtmlLabel3.Text = "Year & Section:"
+        ' 
+        ' lblstudent
+        ' 
+        lblstudent.BackColor = Color.Transparent
+        lblstudent.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
+        lblstudent.Location = New Point(125, 14)
+        lblstudent.Name = "lblstudent"
+        lblstudent.Size = New Size(86, 23)
+        lblstudent.TabIndex = 1
+        lblstudent.Text = "Student-Id:"
+        ' 
+        ' Guna2HtmlLabel2
+        ' 
+        Guna2HtmlLabel2.BackColor = Color.Transparent
+        Guna2HtmlLabel2.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
+        Guna2HtmlLabel2.Location = New Point(6, 14)
+        Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Guna2HtmlLabel2.Size = New Size(86, 23)
+        Guna2HtmlLabel2.TabIndex = 6
+        Guna2HtmlLabel2.Text = "Student-Id:"
+        ' 
+        ' lblYearSection
+        ' 
+        lblYearSection.BackColor = Color.Transparent
+        lblYearSection.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
+        lblYearSection.Location = New Point(125, 62)
+        lblYearSection.Name = "lblYearSection"
+        lblYearSection.Size = New Size(128, 23)
+        lblYearSection.TabIndex = 3
+        lblYearSection.Text = "Year And Section"
+        ' 
+        ' Guna2HtmlLabel1
+        ' 
+        Guna2HtmlLabel1.BackColor = Color.Transparent
+        Guna2HtmlLabel1.Font = New Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold)
+        Guna2HtmlLabel1.Location = New Point(6, 37)
+        Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Guna2HtmlLabel1.Size = New Size(72, 23)
+        Guna2HtmlLabel1.TabIndex = 5
+        Guna2HtmlLabel1.Text = "Fullname:"
+        ' 
+        ' lblAttendance
+        ' 
+        lblAttendance.BackColor = Color.Transparent
+        lblAttendance.Font = New Font("Segoe UI Variable Display", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblAttendance.ForeColor = Color.White
+        lblAttendance.Location = New Point(12, 12)
+        lblAttendance.Name = "lblAttendance"
+        lblAttendance.Size = New Size(182, 38)
+        lblAttendance.TabIndex = 0
+        lblAttendance.Text = "ATTENDANCE"
+        ' 
+        ' Guna2DragControl1
+        ' 
+        Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
+        Guna2DragControl1.TargetControl = pnlHeader
+        Guna2DragControl1.UseTransparentDrag = True
         ' 
         ' StudentAttendance
         ' 
@@ -325,6 +324,7 @@ Partial Class StudentAttendance
         Controls.Add(Guna2ShadowPanel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "StudentAttendance"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "StudentAttendance"
         Guna2ShadowPanel1.ResumeLayout(False)
         Guna2Panel2.ResumeLayout(False)
@@ -332,9 +332,9 @@ Partial Class StudentAttendance
         pnlHeader.ResumeLayout(False)
         pnlHeader.PerformLayout()
         Guna2Panel3.ResumeLayout(False)
+        Guna2Panel4.ResumeLayout(False)
         Guna2Panel1.ResumeLayout(False)
         Guna2Panel1.PerformLayout()
-        Guna2Panel4.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
